@@ -224,3 +224,5 @@ app.use('/', router)
 
 // [...]
 ```
+
+Ao acessarmos novamente a URL _localhost:5000_ veremos o retorno definido em nosso _routes.js_.
