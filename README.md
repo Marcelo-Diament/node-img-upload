@@ -120,8 +120,45 @@ npm i dotenv --save
 
 _**Branch: feature/02-server-initial-setup**_
 
-Nosso servidor será definido no arquivo _server.js_, que será salvo na raíz do projeto. Podemos criá-lo através do próprio terminal - certifique-se de que está na raíz do projeto. Também vamos concatenar (`&&`) esse comando com outro que abrirá o arquivo no VS Code (ou outra ferramenta que estiver usando):
+#### **02.01. Criando o _server.js_**
 
-```sh
+Nosso servidor será definido no arquivo _server.js_, que será salvo na raíz do projeto. Podemos criá-lo através do próprio terminal - certifique-se de que está na raíz do projeto. Também vamos concatenar ( `&&` ) esse comando com outro que abrirá o arquivo no VS Code (ou outra ferramenta que estiver usando):
+
+``` sh
 touch server.js && code server.js
+```
+
+#### **02.02. Configurando o _server.js_**
+
+Agora vamos, de fato, configurar o servidor. A seguir, uma breve explicação sobre cada trecho:
+
+``` js
+// Importando o express
+const express = require('express')
+
+// Importando o bodyParser
+const bodyParser = require('body-parser')
+
+// Importando o path (que nos permite gerenciar os caminhos no projeto mais facilmente)
+const path = require('path')
+
+// Instanciando o express na variável app
+const app = express()
+
+// Importando o dotenv
+require('dotenv').config()
+
+// Definindo a porta (caso não haja a variável configurada no .env, usará o segundo valor)
+const port = process.env.PORT || 5000
+
+// Permitindo o uso de JSON no body das requests com o bodyParser
+app.use(bodyParser.json())
+
+// Permitindo o parse das informações (com Content-Type correspondente ao type) vindas no body das requests com o bodyParser. O true permite informações encadeadas (usa a lib qs, com false usaria a lib querystring)
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+// Por fim, precisamos instruir o servidor a observar (listen) a porta definida - isso nos permite acessar localhost:PORTA_DEFINIDA para visualizarmos nosso projeto. Perceba que, além da porta, podemos passar um segundo parâmetro - uma função callback que, nesse caso, retorna um console.log para avisar que o servidor está 'rodando' na porta definida.
+app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 ```
