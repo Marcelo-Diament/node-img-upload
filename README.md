@@ -316,3 +316,25 @@ router.get('/profile', (req, res) => res.render('profile'))
 ```
 
 Acesse _localhost:5000/profile_ para ver como ficou a nossa página de perfil.
+
+### 06 - Partial Views
+
+_**Branch: feature/06-partial-views**_
+
+#### **06.01. Partial Views**
+
+Reparou que estamos repetindo uma série de trechos do nosso HTML? O uso do _template engine_ nos permite reaproveitar código. E isso nos traz inúmeras vantagens, sendo as principais:
+
+**1. Manutenabilidade**
+
+Usando _partial views_, conseguimos reutilizar um único código. Por exemplo: a tag `<header>` normalmente contém o menu de nosso site. Imagine que seu cliente resolve trocar um item do menu. Até o momento, teríamos de acessar cada um dos arquivos para trocar um único link. Mas com esse reaproveitamento, só precisaríamos atualizar um arquivo específico e a atualização seria refletida em todas as páginas que importam esse trecho.
+
+**2. Legibilidade**
+
+Ao remover esses trechos repetitivos, o arquivo de uma página específica acaba ficando muito mais limpo e, consequentemente, legível (o que acaba, inclusive, otimizando nosso tempo de trabalho por conta da rapidez com que conseguimos ler e manipular nosso código).
+
+**3. Responsabilidades**
+
+Ao dividirmos o nosso código em trechos, conseguimos criar arquivos com responsabilidades únicas. Isso reforça as últimas duas vantagens citadas e facilita nosso fluxo de trabalho. Seja para incorporar nossas funcionalidades, identificar possíveis _bugs_, ou mesmo para realizar _rollback_ (desfazer a última ação/atualização).
+
+Agora que já sabemos as vantagens de se utilizar as _partial views_, vamos voltar para nosso código!
