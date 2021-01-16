@@ -199,10 +199,28 @@ const router = express.Router()
 // Definindo a rota para a URL principal com o método GET
 router.get('/', function(req, res) {
 
-    // Definindo o retorno dessa rota com o método send
+    // Definindo o retorno dessa rota com o método send (no arquivo vamos usar arrow function)
     res.send('<h1>Upload de Imagens com Node.js</h1>')
 })
 
 // Exportando o router para podermos importá-lo em outros arquivos
 module.exports = router
+```
+
+#### **03.03. Importando o _routes.js_**
+
+Por fim, precisamos importar e usar esse arquivo no _server.js_:
+
+```js
+// [...]
+
+// Importando o arquivo routes.js
+const router = require('./routes')
+
+// [...]
+
+// Definindo o uso do arquivo para a rota principal
+app.use('/', router)
+
+// [...]
 ```
