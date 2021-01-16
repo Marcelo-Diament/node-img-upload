@@ -115,3 +115,13 @@ npm i dotenv --save
 ```
 
 **_Spoiler_**: para usarmos esse pacote, criamos um arquivo chamado _.env_ na raíz do projet, importamos o [dotenv](https://www.npmjs.com/package/dotenv) - `require('dotenv').config()` - e acessamos as variáveis definidas no arquivo com `process.env.NOME_DA_VARIAVEL` .
+
+### 02 - Setup Inicial do Servidor
+
+_**Branch: feature/02-server-initial-setup**_
+
+Nosso servidor será definido no arquivo _server.js_, que será salvo na raíz do projeto. Podemos criá-lo através do próprio terminal - certifique-se de que está na raíz do projeto. Também vamos concatenar (`&&`) esse comando com outro que abrirá o arquivo no VS Code (ou outra ferramenta que estiver usando):
+
+```sh
+touch server.js && code server.js
+```
