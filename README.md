@@ -62,27 +62,27 @@ npm i body-parser --save
 
 O [ejs](https://www.npmjs.com/package/ejs) é um _template engine_. De forma simplificada, ele nos permite receber variáveis através das rotas (pelas _requests_) e renderizá-las mantendo uma sintaxe semelhante à do HTML. Com as _template engines_ também podemos usar código _JavaScript_ dentro desse mesmo documento (que muito se parece com um HTML). Para instalá-lo, vamos executar o seguinte trecho no terminal:
 
-```sh
+``` sh
 npm i ejs --save
 ```
 
-Vale pontuar que poderíamos ter instalado e definido o [EJS](https://ejs.co/) como _template engine_ a ser usada ao instalarmos o [express](https://www.npmjs.com/package/express) - complementando o comando com a opção `--view=ejs`.
+Vale pontuar que poderíamos ter instalado e definido o [EJS](https://ejs.co/) como _template engine_ a ser usada ao instalarmos o [express](https://www.npmjs.com/package/express) - complementando o comando com a opção `--view=ejs` .
 
 **uuid**
 
 O [uuid](https://www.npmjs.com/package/uuid) (_Universally Unique IDentifier_) vai gerar nomes aleatórios para nossos arquivos recebidos através do formulário que vamos construir (evitando assim nomes duplicados). Simples assim.
 
-```sh
+``` sh
 npm i uuid --save
 ```
 
-Também podemos instalar o [uuid-4](https://www.npmjs.com/package/uuid-4) - seu subpacote referente à versão 4 com `npm i uuid-v4 --save`.
+Também podemos instalar o [uuid-4](https://www.npmjs.com/package/uuid-4) - seu subpacote referente à versão 4 com `npm i uuid-v4 --save` .
 
 **multer**
 
-O [multer](https://www.npmjs.com/package/multer) funciona como o [body-parser](https://www.npmjs.com/package/body-parser) - mas para formulários `multipart/form-data` (com o atributo `enctype=multipart/form-data`, necessário para envio de arquivos via formulários - com o método `POST`). Para instalá-lo:
+O [multer](https://www.npmjs.com/package/multer) funciona como o [body-parser](https://www.npmjs.com/package/body-parser) - mas para formulários `multipart/form-data` (com o atributo `enctype=multipart/form-data` , necessário para envio de arquivos via formulários - com o método `POST` ). Para instalá-lo:
 
-```sh
+``` sh
 npm i multer --save
 ```
 
@@ -90,16 +90,28 @@ npm i multer --save
 
 O pacote [sharp](https://www.npmjs.com/package/sharp) nos permite manipular imagens facilmente.
 
-```sh
+``` sh
 npm i sharp --save
 ```
 
 **nodemon**
 
-Num projeto [node.js](https://nodejs.org/en/), sempre que há atualizações nos arquivos de _back end_ precisamos 'derrubar' (com Control + C no terminal) e 'levantar' o servidor novamente (com `npm run server`, por exemplo). O [nodemon](https://www.npmjs.com/package/nodemon) fica 'observando' as atualizações e _restarta_ o servidor automaticamente (mas ainda precisamos atualizar a janela no _browser_). Para instalar o [nodemon](https://www.npmjs.com/package/nodemon) basta executar:
+Num projeto [node.js](https://nodejs.org/en/), sempre que há atualizações nos arquivos de _back end_ precisamos 'derrubar' (com Control + C no terminal) e 'levantar' o servidor novamente (com `npm run server` , por exemplo). O [nodemon](https://www.npmjs.com/package/nodemon) fica 'observando' as atualizações e _restarta_ o servidor automaticamente (mas ainda precisamos atualizar a janela no _browser_). Para instalar o [nodemon](https://www.npmjs.com/package/nodemon) basta executar:
 
-```sh
+``` sh
 npm i nodemon --save-dev
 ```
 
-Repare que nesse pacote/dependência, estamos incluindo a opção `--save-dev`. Isso para que o [nodemon](https://www.npmjs.com/package/nodemon) seja configurado como uma dependência de desenvolvimento apenas.
+Repare que nesse pacote/dependência, estamos incluindo a opção `--save-dev` . Isso para que o [nodemon](https://www.npmjs.com/package/nodemon) seja configurado como uma dependência de desenvolvimento apenas.
+
+**dotenv**
+
+O **[dotenv](https://www.npmjs.com/package/dotenv)** na realidade não seria uma dependência necessária. Mas acrescentamos aqui nesse projeto como um bônus, para aumentar seu repertório de pacotes [node](https://nodejs.org/en/). =)
+
+Ele funciona de modo similar ao arquivo _.gitignore_ (que evita com que dados sejam compartilhados no repositório). Usamos o [dotenv](https://www.npmjs.com/package/dotenv) para declarar dados sensíveis como senha de banco de dados. No caso, vamos usar esse pacote para configurarmos o número da porta do servidor.
+
+``` sh
+npm i dotenv --save
+```
+
+**_Spoiler_**: para usarmos esse pacote, criamos um arquivo chamado _.env_ na raíz do projet, importamos o [dotenv](https://www.npmjs.com/package/dotenv) - `require('dotenv').config()` - e acessamos as variáveis definidas no arquivo com `process.env.NOME_DA_VARIAVEL` .
