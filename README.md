@@ -85,3 +85,11 @@ O [multer](https://www.npmjs.com/package/multer) funciona como o [body-parser](h
 ```sh
 npm i multer --save
 ```
+
+**sharp**
+
+O pacote [sharp](https://www.npmjs.com/package/sharp) nos permite manipular imagens facilmente.
+
+```sh
+npm i sharp --save
+```
