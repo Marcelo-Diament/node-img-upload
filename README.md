@@ -298,7 +298,7 @@ _**Branch: feature/05-profile-view**_
 
 Vamos criar uma nova _view_, que será a página de destino após o 'cadastro' de nosso usuário (usado para aplicarmos o _upload_ de imagem). Não trataremos banco de dados nessa prática, será apenas uma simulação.
 
-Podemos copiar e colar o arquivo _index.ejs_ dentro da pasta _views_. E então, após renomeá-lo para _profile.ejs_, vamos simplesmente adaptar o conteúdo principal (dentro da tag `<main>`). E, antes de criarmos a parte principal do projeto (o _upload_), vamos usar um conteúdo fictício. Escolhemos o personagem Randy Marsh, do South Park, como exemplo:
+Podemos copiar e colar o arquivo _index.ejs_ dentro da pasta _views_. E então, após renomeá-lo para _profile.ejs_, vamos simplesmente adaptar o conteúdo principal (dentro da tag `<main>` ). E, antes de criarmos a parte principal do projeto (o _upload_), vamos usar um conteúdo fictício. Escolhemos o personagem Randy Marsh, do South Park, como exemplo:
 
 ![Randy Marsh](https://static.wikia.nocookie.net/spsot/images/b/b9/Randy_Marsh_facebook_profile.png)
 
@@ -310,7 +310,9 @@ Após criarmos o conteúdo de marcação (como chamamos conteúdo temporários d
 
 _**routes.js**_
 
-```js
+``` js
 // Estamos informando que, ao acessar a página '/profile' com o método GET, a view 'profile' deve ser renderizada
 router.get('/profile', (req, res) => res.render('profile'))
 ```
+
+Acesse _localhost:5000/profile_ para ver como ficou a nossa página de perfil.
