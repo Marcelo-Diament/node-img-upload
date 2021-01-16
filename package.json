@@ -1,0 +1,25 @@
+{
+  "name": "node-img-upload",
+  "version": "1.0.0",
+  "description": "A node project that shows how to configure image upload with node.js, express.js and EJS template engine.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcelo-Diament/node-img-upload.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "ejs",
+    "image upload"
+  ],
+  "author": "Marcelo Diament",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcelo-Diament/node-img-upload/issues"
+  },
+  "homepage": "https://github.com/Marcelo-Diament/node-img-upload#readme"
+}
