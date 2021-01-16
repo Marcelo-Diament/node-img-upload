@@ -57,3 +57,13 @@ O pacote **[body-parser](https://www.npmjs.com/package/body-parser)** nos ajuda 
 ``` sh
 npm i body-parser --save
 ```
+
+**ejs**
+
+O [ejs](https://www.npmjs.com/package/ejs) é um _template engine_. De forma simplificada, ele nos permite receber variáveis através das rotas (pelas _requests_) e renderizá-las mantendo uma sintaxe semelhante à do HTML. Com as _template engines_ também podemos usar código _JavaScript_ dentro desse mesmo documento (que muito se parece com um HTML). Para instalá-lo, vamos executar o seguinte trecho no terminal:
+
+```sh
+npm i ejs
+```
+
+Vale pontuar que poderíamos ter instalado e definido o [EJS](https://ejs.co/) como _template engine_ a ser usada ao instalarmos o [express](https://www.npmjs.com/package/express) - complementando o comando com a opção `--view=ejs`.
