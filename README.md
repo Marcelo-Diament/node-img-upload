@@ -265,3 +265,27 @@ Outra opção, é utilizar o _script_ do _bundle_ - que já contém ambos os scr
 ```
 
 Acesse a [documentação](https://getbootstrap.com/docs/5.0/getting-started/introduction/) para saber mais detalhes sobre como tirar maior proveito dessa biblioteca.
+
+#### **04.03. Direcionando a Rota para a View**
+
+**_routes.js_**
+
+Se acessar _localhost:5000_, verá que a página não exibe nada de novo, continua exatamente igual. Isso ocorre pois precisamos informar ao nosso _back end_ que, ao acessar a rota principal ( `/` ), precisamos mostrar o conteúdo da nossa _view_. Para isso, utilizaremos o método `render()` , que recebe como argumentos a _view_ e, possivelmente, um objeto com valores a serem transmitidos para a _view_ (mas vamos devagar, por enquanto só passaremos a _view_ a ser utilizada). No arquivo _routes.js_ vamos deixar a rota da seguinte maneira:
+
+``` js
+router.get('/', (req, res) => {
+            res.render('index')
+        }
+```
+
+**_server.js_**
+
+Mas não é só isso! Para podermos passar simplesmente o nome da _view_ no método `render()` sem nos preocuparmos com o 'caminho' até o arquivo - e para informarmos ao [Express.js](https://expressjs.com/) que estamos usando o [EJS](https://ejs.co/) como _template engine_, também precisamos incluir os seguintes trechos no arquivo _server.js_:
+
+``` js
+// Indica qual o caminho para as views
+app.set('views', path.join(__dirname, 'views'));
+
+// Indica que o template engine (ou view engine) a ser usado é o EJS
+app.set('view engine', 'ejs')
+```
