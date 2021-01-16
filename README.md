@@ -211,7 +211,7 @@ module.exports = router
 
 Por fim, precisamos importar e usar esse arquivo no _server.js_:
 
-```js
+``` js
 // [...]
 
 // Importando o arquivo routes.js
@@ -231,10 +231,37 @@ Ao acessarmos novamente a URL _localhost:5000_ veremos o retorno definido em nos
 
 _**Branch: feature/04-index-view**_
 
-#### **04.01. Criando a view _index.ejs_**
+#### **04.01. Criando a View _index.ejs_**
 
-Até o momento, estamos renderizando HTML através do método `res.send()`, passando o código HTML como seu argumento. Mas para podermos ter uma página mais elaborada, ao invés de criarmos um arquivo HTML e um _script_ JavaScript integrado através da tag `<script>`, vamos usar a _template engine_ [EJS](https://ejs.co/).
+Até o momento, estamos renderizando HTML através do método `res.send()` , passando o código HTML como seu argumento. Mas para podermos ter uma página mais elaborada, ao invés de criarmos um arquivo HTML e um _script_ JavaScript integrado através da tag `<script>` , vamos usar a _template engine_ [EJS](https://ejs.co/).
 
 Usá-la, nos permite trabalhar de forma mais simplificada com JS e HTML no mesmo documento - além de recebermos valores através de um objeto enviado através da rota ou do _controller_.
 
 O primeiro passo é criarmos um arquivo com extensão _.ejs_ dentro da pasta _views_.
+
+#### **04.02. Página Inicial com HTML e Bootstrap**
+
+O uso do JS no arquivo _.ejs_ não é obrigatório. Ou seja, podemos ter um HTML 'tradicional' que o mesmo será renderizado normalmente. Para nossa página inicial (_index.ejs_), usaremos o [Bootstrap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - assim podemos nos focar no **upload de imagem com node.js** sem nos preocuparmos com CSS mas conferindo um estilo bacana ao nosso _front end_.
+
+No caso, usaremos basicamente o sistema de _grid_ e componentes de formulário. Mas antes, é importante ressaltar que precisamos importar o CSS e os scripts JS do [Bootstrap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
+
+O link para o estilo deve ser inserido na tag `<head>` do nosso documento (se for usar um estilo customizado, insira seu link depois do link do Bootstrap, para que possa sobrescrevê-lo, se necessário):
+
+``` html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+```
+
+Já os _scripts_, devem ser posicionados no final do documento, antes do fechamento da tag _body_ ( `</body>` ), de modo a não prejudicar a performance e funcionamento do site. É importante que sejam inseridos exatamente nessa mesma ordem (pois os _scripts_ acima são dependências dos seguintes - ou, os _scripts_ debaixo precisam, são dependentes dos que são declarados acima deles):
+
+``` html
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+```
+
+Outra opção, é utilizar o _script_ do _bundle_ - que já contém ambos os scripts em um link só:
+
+``` html
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+```
+
+Acesse a [documentação](https://getbootstrap.com/docs/5.0/getting-started/introduction/) para saber mais detalhes sobre como tirar maior proveito dessa biblioteca.
