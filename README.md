@@ -174,3 +174,13 @@ Mas, faremos um _script_ para chamar esse trecho de código. No arquivo _package
 ```
 
 Dessa forma, podemos executar `npm start` e o _script_ será executado.
+
+### 03 - Setup Inicial de Rotas
+
+_**Branch: feature/03-routes-initial-setup**_
+
+#### **03.01. Criando o _routes.js_**
+
+Apesar de nosso servidor estar configurado, ao acessarmos _localhost:5000_ visualizamos a seguinte mensagem: `Cannot GET /`. Isso ocorre pois não temos nenhuma rota configurada. Então vamos configurar!
+
+Vamos criar e abrir o arquivo na nossa IDE com `touch routes.js && code routes.js`.
