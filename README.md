@@ -226,3 +226,15 @@ app.use('/', router)
 ```
 
 Ao acessarmos novamente a URL _localhost:5000_ veremos o retorno definido em nosso _routes.js_.
+
+### 04 - View Index
+
+_**Branch: feature/04-index-view**_
+
+#### **04.01. Criando a view _index.ejs_**
+
+Até o momento, estamos renderizando HTML através do método `res.send()`, passando o código HTML como seu argumento. Mas para podermos ter uma página mais elaborada, ao invés de criarmos um arquivo HTML e um _script_ JavaScript integrado através da tag `<script>`, vamos usar a _template engine_ [EJS](https://ejs.co/).
+
+Usá-la, nos permite trabalhar de forma mais simplificada com JS e HTML no mesmo documento - além de recebermos valores através de um objeto enviado através da rota ou do _controller_.
+
+O primeiro passo é criarmos um arquivo com extensão _.ejs_ dentro da pasta _views_.
