@@ -167,9 +167,9 @@ app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 
 Se executarmos `node server.js` no terminal, veremos a mensagem do `console.log()` no terminal. Ou podemos, ainda, usar o `nodemon server.js` (para não precisarmos derrubar e levantar o servidor a cada atualização).
 
-Mas, faremos um _script_ para chamar esse trecho de código. No arquivo _package.json_, vamos criar o _script_ `start` (dentro da propriedade `scripts`) da seguinte maneira:
+Mas, faremos um _script_ para chamar esse trecho de código. No arquivo _package.json_, vamos criar o _script_ `start` (dentro da propriedade `scripts` ) da seguinte maneira:
 
-```json
+``` json
 "start": "nodemon server"
 ```
 
@@ -181,6 +181,28 @@ _**Branch: feature/03-routes-initial-setup**_
 
 #### **03.01. Criando o _routes.js_**
 
-Apesar de nosso servidor estar configurado, ao acessarmos _localhost:5000_ visualizamos a seguinte mensagem: `Cannot GET /`. Isso ocorre pois não temos nenhuma rota configurada. Então vamos configurar!
+Apesar de nosso servidor estar configurado, ao acessarmos _localhost:5000_ visualizamos a seguinte mensagem: `Cannot GET /` . Isso ocorre pois não temos nenhuma rota configurada. Então vamos configurar!
 
-Vamos criar e abrir o arquivo na nossa IDE com `touch routes.js && code routes.js`.
+Vamos criar e abrir o arquivo na nossa IDE com `touch routes.js && code routes.js` .
+
+#### **03.02. Configurando o _routes.js_**
+
+Agora precisamos configurar o arquivo. Faremos o seguinte:
+
+``` js
+// Importando o express
+const express = require('express')
+
+// Instanciando o Router (necessário para criarmos as rotas)
+const router = express.Router()
+
+// Definindo a rota para a URL principal com o método GET
+router.get('/', function(req, res) {
+
+    // Definindo o retorno dessa rota com o método send
+    res.send('<h1>Upload de Imagens com Node.js</h1>')
+})
+
+// Exportando o router para podermos importá-lo em outros arquivos
+module.exports = router
+```
