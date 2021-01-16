@@ -77,3 +77,11 @@ npm i uuid --save
 ```
 
 Também podemos instalar o [uuid-4](https://www.npmjs.com/package/uuid-4) - seu subpacote referente à versão 4 com `npm i uuid-v4 --save`.
+
+**multer**
+
+O [multer](https://www.npmjs.com/package/multer) funciona como o [body-parser](https://www.npmjs.com/package/body-parser) - mas para formulários `multipart/form-data` (com o atributo `enctype=multipart/form-data`, necessário para envio de arquivos via formulários - com o método `POST`). Para instalá-lo:
+
+```sh
+npm i multer --save
+```
