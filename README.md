@@ -162,3 +162,15 @@ app.use(bodyParser.urlencoded({
 // Por fim, precisamos instruir o servidor a observar (listen) a porta definida - isso nos permite acessar localhost:PORTA_DEFINIDA para visualizarmos nosso projeto. Perceba que, além da porta, podemos passar um segundo parâmetro - uma função callback que, nesse caso, retorna um console.log para avisar que o servidor está 'rodando' na porta definida.
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
 ```
+
+#### **02.03. Definindo o script _start_**
+
+Se executarmos `node server.js` no terminal, veremos a mensagem do `console.log()` no terminal. Ou podemos, ainda, usar o `nodemon server.js` (para não precisarmos derrubar e levantar o servidor a cada atualização).
+
+Mas, faremos um _script_ para chamar esse trecho de código. No arquivo _package.json_, vamos criar o _script_ `start` (dentro da propriedade `scripts`) da seguinte maneira:
+
+```json
+"start": "nodemon server"
+```
+
+Dessa forma, podemos executar `npm start` e o _script_ será executado.
