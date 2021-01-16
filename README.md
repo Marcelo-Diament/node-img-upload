@@ -30,3 +30,6 @@ _Sem mais delongas..._
 
 _**Branch: feature/01-project-initial-setup**_
 
+#### **01.01. Iniciando um projeto node.js**
+
+Basta rodarmos `npm init` e configurarmos nosso arquivo `package.json` (pode pressionar 'Enter' para tudo ou, se preferir, definir cada propriedade solicitada). Se preferir, para não definir nenhuma propriedade do arquivo, inclua `-y` ao final do comando (`npm init -y`), que nada mas faz do que responder _YES_ para todas as perguntas.
