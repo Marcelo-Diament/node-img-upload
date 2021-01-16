@@ -93,3 +93,13 @@ O pacote [sharp](https://www.npmjs.com/package/sharp) nos permite manipular imag
 ```sh
 npm i sharp --save
 ```
+
+**nodemon**
+
+Num projeto [node.js](https://nodejs.org/en/), sempre que há atualizações nos arquivos de _back end_ precisamos 'derrubar' (com Control + C no terminal) e 'levantar' o servidor novamente (com `npm run server`, por exemplo). O [nodemon](https://www.npmjs.com/package/nodemon) fica 'observando' as atualizações e _restarta_ o servidor automaticamente (mas ainda precisamos atualizar a janela no _browser_). Para instalar o [nodemon](https://www.npmjs.com/package/nodemon) basta executar:
+
+```sh
+npm i nodemon --save-dev
+```
+
+Repare que nesse pacote/dependência, estamos incluindo a opção `--save-dev`. Isso para que o [nodemon](https://www.npmjs.com/package/nodemon) seja configurado como uma dependência de desenvolvimento apenas.
