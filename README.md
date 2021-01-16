@@ -32,4 +32,19 @@ _**Branch: feature/01-project-initial-setup**_
 
 #### **01.01. Iniciando um projeto node.js**
 
-Basta rodarmos `npm init` e configurarmos nosso arquivo `package.json` (pode pressionar 'Enter' para tudo ou, se preferir, definir cada propriedade solicitada). Se preferir, para não definir nenhuma propriedade do arquivo, inclua `-y` ao final do comando (`npm init -y`), que nada mas faz do que responder _YES_ para todas as perguntas.
+Basta rodarmos `npm init` e configurarmos nosso arquivo **package.json** (pode pressionar 'Enter' para tudo ou, se preferir, definir cada propriedade solicitada). Se preferir, para não definir nenhuma propriedade do arquivo, inclua `-y` ao final do comando (`npm init -y`), que nada mas faz do que responder _YES_ para todas as perguntas.
+
+#### **01.02. Instalando as dependências**
+
+Vamos instalar as dependências que utilizaremos ao longo do projeto (ou seja, os pacotes _node_ com o _node package manager_ - **[npm](https://www.npmjs.com/)**). Poderíamos instalar todos de uma só vez (basta executarmos `npm i pacote1 pacote2 pacote2`). Mas vamos instalar um a um para descrevermos brevemente o papel de cada um deles:
+
+**express**
+
+O pacote **[express](https://www.npmjs.com/package/express)** é esse _mini-framework_ que comentamos. Ele facilita a configuração do servidor [node.js](https://nodejs.org/en/). Para instalarmos ele devemos executar o seguinte comando no terminal:
+
+```sh
+npm i express --save
+```
+
+> _O trecho `--save` garante que o pacote será salvo como uma dependência no arquivo **package.json** (que é o responsável por gerenciar as dependências do projeto e garantir que outros desenvolvedores terão todos os pacotes necesários listados num único local)._
+
