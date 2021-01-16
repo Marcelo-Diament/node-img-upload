@@ -67,3 +67,13 @@ npm i ejs --save
 ```
 
 Vale pontuar que poderíamos ter instalado e definido o [EJS](https://ejs.co/) como _template engine_ a ser usada ao instalarmos o [express](https://www.npmjs.com/package/express) - complementando o comando com a opção `--view=ejs`.
+
+**uuid**
+
+O [uuid](https://www.npmjs.com/package/uuid) (_Universally Unique IDentifier_) vai gerar nomes aleatórios para nossos arquivos recebidos através do formulário que vamos construir (evitando assim nomes duplicados). Simples assim.
+
+```sh
+npm i uuid --save
+```
+
+Também podemos instalar o [uuid-4](https://www.npmjs.com/package/uuid-4) - seu subpacote referente à versão 4 com `npm i uuid-v4 --save`.
