@@ -380,3 +380,7 @@ O atributo _action_ define o destino para o qual será enviado seu conteúdo. No
 **enctype**
 
 A última tag necessária é a _enctype_, que define como os dados do formulário (_form-data_) deve ser "encodado". Usaremos o valor `multipart/form-data` (`enctype=multipart/form-data`).
+
+#### **07.02. Pasta das Imagens Enviadas**
+
+Na raíz do projeto, vamos criar a pasta _./public/images_, na qual salvaremos as imagens enviadas via formulário.
