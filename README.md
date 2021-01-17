@@ -337,4 +337,14 @@ Ao remover esses trechos repetitivos, o arquivo de uma página específica acaba
 
 Ao dividirmos o nosso código em trechos, conseguimos criar arquivos com responsabilidades únicas. Isso reforça as últimas duas vantagens citadas e facilita nosso fluxo de trabalho. Seja para incorporar nossas funcionalidades, identificar possíveis _bugs_, ou mesmo para realizar _rollback_ (desfazer a última ação/atualização).
 
-Agora que já sabemos as vantagens de se utilizar as _partial views_, vamos voltar para nosso código!
+Agora que já sabemos as vantagens de se utilizar as _partial views_, vamos voltar para nosso código! Para utilizarmos as _partial views_ vamos criar uma pasta chamada _partials_ dentro da pasta _views_.
+
+#### **06.02. Head**
+
+Dentro da pasta _partials_ criaremos nosso primeiro arquivo parcial - o _head.ejs_. Basicamente vamos copiar o trecho do início do arquivo _index.ejs_ até o fechamento da tag - `</head>`. Então vamos substituir esse mesmo trecho - tanto no _index.ejs_ quanto no _profile.ejs_ - por um trecho com uma sintaxe _scriptlet_. Esse trecho deve ser assim:
+
+```ejs
+<%- include('partials/head') %>
+```
+
+> _**Scriptlet syntax**_: com o [EJS](https://ejs.co/), podemos utilizar algumas marcações específicas que nos permitem incluir arquivos (`<%- include('partials/arquivo-parcial') %>`).
