@@ -590,6 +590,7 @@ ___
 Se quiser trocar ideias, experiências e figurinhas, entre em contato comigo!
 
 **Marcelo Diament** | Desenvolvedor @ Jüssi (Whirlpool > Compra Certa) e Instrutor FullStack @ Digital House
+
 [Github][Github] | [LinkedIn][LinkedIn]
 
 [//]: # 
