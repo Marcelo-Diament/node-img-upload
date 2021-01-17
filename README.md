@@ -398,3 +398,20 @@ app.use(express.static(path.join(__dirname, 'public')))
 O _middleware_ nos permite tratarmos dados entre a requisição e o controle da _response_ (muito utilizado para validação de login, por exemplo).
 
 Então criaremos um _middleware_ específico para _upload_ de imagens, para que os arquivos sejam salvos antes de retornarmos a página do perfil do usuário cadastrado.
+
+Para isso vamos criar o arquivo _./middleware/upload.js_/ E, dentro dele, o seguinte conteúdo:
+
+``` js
+// Importando multer
+const multer = require('multer');
+
+// Definindo o upload utilizando o multer e configurando o tamanho máximo de arquivo como 4MB
+const upload = multer({
+    limits: {
+        fileSize: 4 * 1024 * 1024,
+    }
+});
+
+// Exportando o upload
+module.exports = upload
+```
