@@ -572,3 +572,27 @@ Nossa _view_ _profile.ejs_ ficará assim:
 ```
 
 > **Bônus**: podemos usar a sintaxe `<% ... %>` para usar loops e condicionais dentro da view EJS.
+
+___
+
+Agora é só testar e aplicar em outros projetos!
+
+## Desafio
+
+Que tal elaborar um projeto mais complexo, possivelmente criando o _front end_ com [React.js](https://pt-br.reactjs.org/) ou conectando o seu formulário com um banco de dados (como o [MongoDB](https://www.mongodb.com/) e o [mongoose](https://mongoosejs.com/), por exemplo)?
+
+___
+
+## Obrigado!
+
+**Vamos nos conectar?**
+
+Se quiser trocar ideias, experiências e figurinhas, entre em contato comigo!
+
+**Marcelo Diament** | Desenvolvedor e Instrutor FullStack
+[Github][Github] | [LinkedIn][LinkedIn]
+
+[//]: # 
+
+[Github]: <https://github.com/Marcelo-Diament>
+[LinkedIn]: <https://linkedin.com/in/marcelodiament>
