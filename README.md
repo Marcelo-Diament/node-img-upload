@@ -407,7 +407,12 @@ const multer = require('multer');
 
 // Definindo o upload utilizando o multer e configurando o tamanho máximo de arquivo como 4MB
 const upload = multer({
+
+    // Limites do arquivo a ser salvo
     limits: {
+
+        // A propriedade fileSize é contabilizada em bytes
+        // Portanto, 4 (MB) * 1024 (KB) * 1024 (bytes)representa 4 MB
         fileSize: 4 * 1024 * 1024,
     }
 });
