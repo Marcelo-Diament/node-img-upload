@@ -341,7 +341,7 @@ Agora que já sabemos as vantagens de se utilizar as _partial views_, vamos volt
 
 #### **06.02. Head**
 
-Dentro da pasta _partials_ criaremos nosso primeiro arquivo parcial - o _head.ejs_. Basicamente vamos copiar o trecho do início do arquivo _index.ejs_ até o fechamento da tag - `</head>`. Então vamos substituir esse mesmo trecho - tanto no _index.ejs_ quanto no _profile.ejs_ - por um trecho com uma sintaxe _scriptlet_. Esse trecho deve ser assim:
+Dentro da pasta _partials_ criaremos nosso primeiro arquivo parcial - o _head.ejs_. Basicamente vamos copiar o trecho do início do arquivo _index.ejs_ até a abertura da tag `<body>`. Então vamos substituir esse mesmo trecho - tanto no _index.ejs_ quanto no _profile.ejs_ - por um trecho com uma sintaxe _scriptlet_. Esse trecho deve ser assim:
 
 ```ejs
 <%- include('partials/head') %>
