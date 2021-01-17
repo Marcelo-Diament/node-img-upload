@@ -493,3 +493,52 @@ class Resize {
 // Exportando o Resize
 module.exports = Resize
 ```
+
+#### **07.06. Profile Route**
+
+Chegou o momento de configurarmos a rota de _profile_ (de modo a capturar não só os dados enviados - como _Nome_ e _Sobrenome_ - mas também a imagem/arquivo enviado, que estamos chamando por _Avatar_). Primeiro precisaremos importar o _middleware_, o _Resize_ e o _path_:
+
+``` js
+const upload = require('./middleware/upload')
+const Resize = require('./Resize')
+const path = require('path')
+```
+
+E então podemos definir a rota, de fato:
+
+``` js
+// Definindo a rota profile, fazendo o upload do arquivo enviado pelo input de name image e definindo o callback assíncrono (que receberá req - request e res - response)
+router.post('/profile', upload.single('image'), async function(req, res) {
+
+    // Definindo nome do usuário (input de name 'name')
+    const username = req.body.name
+
+    // Definindo sobrenome do usuário (input de name 'lastname')
+    const surname = req.body.lastname
+
+    // Definindo o caminho da imagem
+    const imagePath = path.join(__dirname, '/public/images')
+
+    // Instanciando um objeto fileUpload a partir da classe Resize
+    const fileUpload = new Resize(imagePath)
+
+    // Caso não haja arquivo...
+    if (!req.file) {
+
+        // Retornaremos um erro como JSON
+        res.status(401).json({
+            error: 'Please provide an image'
+        })
+    }
+
+    // Caso a condição acima seja falsa, salvamos a imagem na pasta definida
+    const filename = await fileUpload.save(req.file.buffer)
+
+    // Retornamos ums response OK (200), renderizamos a view profile enviando os valores das propriedades imagenam, firsname e lastname
+    return res.status(200).render('profile', {
+        imagename: filename,
+        firstname: username,
+        lastname: surname
+    })
+})
+```
