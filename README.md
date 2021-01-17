@@ -544,3 +544,13 @@ router.post('/profile', upload.single('image'), async function(req, res) {
 ```
 
 Experimente preencher o formulário, incluir uma imagem e enviar. Verá que, apesar de nossa _view_ não exibir a imagem enviada, a mesma será salva na pasta _public/images_. ; )
+
+### 08 - Image Render
+
+_**Branch: feature/08-image-rendering-with-ejs**_
+
+#### **08.01. EJS Object Value Render**
+
+Agora só nos resta exibir a imagem enviada via formulário. Para realizarmos essa tarefa, utilizaremos mais um recurso das _template engines_. Reparou que na rota de _profile_, após o upload da imagem, também enviamos um objeto? Conseguimos acesso a esses valores através do [EJS](https://ejs.co/). A sintaxe para trazermos valores dos objetos enviados (_scriptlet syntax_) é `<%= nomeDaVariavel %>` .
+
+> **Bônus**: podemos usar a sintaxe `<% ... %>` para usar loops e condicionais dentro da view EJS.
