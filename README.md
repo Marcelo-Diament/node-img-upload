@@ -553,4 +553,22 @@ _**Branch: feature/08-image-rendering-with-ejs**_
 
 Agora só nos resta exibir a imagem enviada via formulário. Para realizarmos essa tarefa, utilizaremos mais um recurso das _template engines_. Reparou que na rota de _profile_, após o upload da imagem, também enviamos um objeto? Conseguimos acesso a esses valores através do [EJS](https://ejs.co/). A sintaxe para trazermos valores dos objetos enviados (_scriptlet syntax_) é `<%= nomeDaVariavel %>` .
 
+Nossa _view_ _profile.ejs_ ficará assim:
+
+``` ejs
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="container mt-5 p-5 bg-light border rounded">
+  <section class="row">
+    <article class="col-12 col-md-6 mx-auto">
+      <div class="mx-auto">
+        <img src="/images/<%= imagename %>" alt="Avatar de <%= firstname %> <%= lastname %>" class="border border-4 border-warning rounded-circle mx-auto my-3" height="auto" width="100%">
+        <h2 class="mx-auto my-3 text-center"><%= firstname %> <%= lastname %></h2>
+      </div>
+    </article>
+  </section>
+</main>
+<%- include('partials/footer') %>
+```
+
 > **Bônus**: podemos usar a sintaxe `<% ... %>` para usar loops e condicionais dentro da view EJS.
