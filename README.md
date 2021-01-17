@@ -384,3 +384,11 @@ A última tag necessária é a _enctype_, que define como os dados do formulári
 #### **07.02. Pasta das Imagens Enviadas**
 
 Na raíz do projeto, vamos criar a pasta _./public/images_, na qual salvaremos as imagens enviadas via formulário.
+
+#### **07.03. Caminhos de arquivos estáticos**
+
+No arquivo _server.js_, incluiremos um trecho de código que define a pasta `./public` como caminho padrão para arquivos estáticos (como arquivos _css_, _js_ e... imagens!). O trecho é o seguinte:
+
+```js
+app.use(express.static(path.join(__dirname, 'public')))
+```
