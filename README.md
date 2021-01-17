@@ -359,4 +359,4 @@ Faremos o mesmo procedimento, mas dessa vez com o trecho da tag `<header>` (da a
 
 #### **06.04. Footer**
 
-Por fim, faremos exatamente o mesmo, mas com o footer. O trecho do `<footer>...</footer>` será colado no _./views/partials/footer.ejs_ e incluiremos `<%- partials/footer %>` nos arquivos _index.ejs_ e _profile.ejs_.
+Por fim, faremos exatamente o mesmo, mas com o footer. O trecho entre a o fechamento da tag `</main>` e o final do arquivo será colado no _./views/partials/footer.ejs_ e incluiremos `<%- partials/footer %>` nos arquivos _index.ejs_ e _profile.ejs_.
