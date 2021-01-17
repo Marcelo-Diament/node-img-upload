@@ -356,3 +356,7 @@ Faremos o mesmo procedimento, mas dessa vez com o trecho da tag `<header>` (da a
 ``` ejs
 <%- include('partials/head') %>
 ```
+
+#### **06.04. Footer**
+
+Por fim, faremos exatamente o mesmo, mas com o footer. O trecho do `<footer>...</footer>` será colado no _./views/partials/footer.ejs_ e incluiremos `<%- partials/footer %>` nos arquivos _index.ejs_ e _profile.ejs_.
