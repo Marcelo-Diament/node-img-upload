@@ -367,19 +367,19 @@ _**Branch: feature/07-image-upload**_
 
 #### **07.01. Form attributes**
 
-O primeiro passo para podermos realizar um _upload_ de imagem via formulário é garantirmos que o formulário esteja preparado para o envio dos dados (principalmente de arquivos) através dos atributos da tag `<form>`. Esses atributos são:
+O primeiro passo para podermos realizar um _upload_ de imagem via formulário é garantirmos que o formulário esteja preparado para o envio dos dados (principalmente de arquivos) através dos atributos da tag `<form>` . Esses atributos são:
 
 **method**
 
-O arquivo deverá ser enviado (através do _input_ do tipo _file_) utilizando o método `POST`. Logo, precisamos que a tag do formulário possua o atributo `method="post"` (se não o definirmos, por _default_ o método utilizado será o `GET`).
+O arquivo deverá ser enviado (através do _input_ do tipo _file_) utilizando o método `POST` . Logo, precisamos que a tag do formulário possua o atributo `method="post"` (se não o definirmos, por _default_ o método utilizado será o `GET` ).
 
 **action**
 
-O atributo _action_ define o destino para o qual será enviado seu conteúdo. No caso, definiremos o envio para a rota `/profile` (`action="profile"`) - rota a qual prepararemos para receber o conteúdo enviado via formulário.
+O atributo _action_ define o destino para o qual será enviado seu conteúdo. No caso, definiremos o envio para a rota `/profile` ( `action="profile"` ) - rota a qual prepararemos para receber o conteúdo enviado via formulário.
 
 **enctype**
 
-A última tag necessária é a _enctype_, que define como os dados do formulário (_form-data_) deve ser "encodado". Usaremos o valor `multipart/form-data` (`enctype=multipart/form-data`).
+A última tag necessária é a _enctype_, que define como os dados do formulário (_form-data_) deve ser "encodado". Usaremos o valor `multipart/form-data` ( `enctype=multipart/form-data` ).
 
 #### **07.02. Pasta das Imagens Enviadas**
 
@@ -389,6 +389,12 @@ Na raíz do projeto, vamos criar a pasta _./public/images_, na qual salvaremos a
 
 No arquivo _server.js_, incluiremos um trecho de código que define a pasta `./public` como caminho padrão para arquivos estáticos (como arquivos _css_, _js_ e... imagens!). O trecho é o seguinte:
 
-```js
+``` js
 app.use(express.static(path.join(__dirname, 'public')))
 ```
+
+#### **07.04. Middleware**
+
+O _middleware_ nos permite tratarmos dados entre a requisição e o controle da _response_ (muito utilizado para validação de login, por exemplo).
+
+Então criaremos um _middleware_ específico para _upload_ de imagens, para que os arquivos sejam salvos antes de retornarmos a página do perfil do usuário cadastrado.
