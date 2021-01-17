@@ -542,3 +542,5 @@ router.post('/profile', upload.single('image'), async function(req, res) {
     })
 })
 ```
+
+Experimente preencher o formulário, incluir uma imagem e enviar. Verá que, apesar de nossa _view_ não exibir a imagem enviada, a mesma será salva na pasta _public/images_. ; )
