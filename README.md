@@ -354,7 +354,7 @@ Dentro da pasta _partials_ criaremos nosso primeiro arquivo parcial - o _head.ej
 Faremos o mesmo procedimento, mas dessa vez com o trecho da tag `<header>` (da abertura ao fechamento da tag). Criaremos o arquivo _header.ejs_ dentro da pasta _./views/partials_, copiaremos esse trecho da _index.ejs_ e colaremos no arquivo. Então substituiremos esse mesmo trecho (nos arquivos _index.ejs_ e _profile.ejs_) por:
 
 ``` ejs
-<%- include('partials/head') %>
+<%- include('partials/header') %>
 ```
 
 #### **06.04. Footer**
