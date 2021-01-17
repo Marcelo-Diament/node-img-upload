@@ -360,3 +360,23 @@ Faremos o mesmo procedimento, mas dessa vez com o trecho da tag `<header>` (da a
 #### **06.04. Footer**
 
 Por fim, faremos exatamente o mesmo, mas com o footer. O trecho entre a o fechamento da tag `</main>` e o final do arquivo será colado no _./views/partials/footer.ejs_ e incluiremos `<%- partials/footer %>` nos arquivos _index.ejs_ e _profile.ejs_.
+
+### 07 - Image Upload
+
+_**Branch: feature/07-image-upload**_
+
+#### **07.01. Form attributes**
+
+O primeiro passo para podermos realizar um _upload_ de imagem via formulário é garantirmos que o formulário esteja preparado para o envio dos dados (principalmente de arquivos) através dos atributos da tag `<form>`. Esses atributos são:
+
+**method**
+
+O arquivo deverá ser enviado (através do _input_ do tipo _file_) utilizando o método `POST`. Logo, precisamos que a tag do formulário possua o atributo `method="post"` (se não o definirmos, por _default_ o método utilizado será o `GET`).
+
+**action**
+
+O atributo _action_ define o destino para o qual será enviado seu conteúdo. No caso, definiremos o envio para a rota `/profile` (`action="profile"`) - rota a qual prepararemos para receber o conteúdo enviado via formulário.
+
+**enctype**
+
+A última tag necessária é a _enctype_, que define como os dados do formulário (_form-data_) deve ser "encodado". Usaremos o valor `multipart/form-data` (`enctype=multipart/form-data`).
