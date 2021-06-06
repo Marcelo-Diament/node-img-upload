@@ -73,7 +73,7 @@ Vale pontuar que poderíamos ter instalado e definido o [EJS](https://ejs.co/) c
 O [uuid](https://www.npmjs.com/package/uuid) (_Universally Unique IDentifier_) vai gerar nomes aleatórios para nossos arquivos recebidos através do formulário que vamos construir (evitando assim nomes duplicados). Simples assim.
 
 ``` sh
-npm i uuid --save
+npm i uuid uuid-v4 --save
 ```
 
 Também podemos instalar o [uuid-4](https://www.npmjs.com/package/uuid-4) - seu subpacote referente à versão 4 com `npm i uuid-v4 --save` .
@@ -265,6 +265,61 @@ Outra opção, é utilizar o _script_ do _bundle_ - que já contém ambos os scr
 ```
 
 Acesse a [documentação](https://getbootstrap.com/docs/5.0/getting-started/introduction/) para saber mais detalhes sobre como tirar maior proveito dessa biblioteca.
+
+Nossa view `index.ejs` ficará assim:
+
+```ejs
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=He, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+<header class="bg-light mb-5 p-5">
+  <h1><%= title %></h1>
+</header>
+<main class="container mt-5 p-5 bg-light border rounded">
+  <section class="row">
+    <article class="col-12">
+      <p>Preencha o formulário a seguir</p>
+      <form>
+        <div class="row mb-3">
+          <div class="col">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Nome">
+              <label for="name" class="form-label">Nome</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Sobrenome">
+              <label for="lastname" class="form-label">Sobrenome</label>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="image" class="form-label">Avatar</label>
+            <input type="file" class="form-control" id="image" name="image" aria-describedby="imageHelp">
+            <div id="imageHelp" class="form-text">Insira arquivos .jpg ou .png (máx. 4MB).</div>
+          </div>
+        </div>
+        <button type="submit" name="upload" class="btn btn-primary align-right">Enviar</button>
+      </form>
+    </article>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+
+</html>
+```
 
 #### **04.03. Direcionando a Rota para a View**
 
